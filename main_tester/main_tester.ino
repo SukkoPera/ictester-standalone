@@ -246,7 +246,7 @@ void setup() {
     pin5.high();
     pin15.high();
     pin4.high();
-    pin14.config(INPUT, LOW);
+    pin14.mode(INPUT);
   }
 
   if ((menuptr==3)||(menuptr==4)) //4416, 4464
@@ -263,10 +263,10 @@ void setup() {
     pin15.high();
     pin4.high();
     pin16.high();
-    pin2.config(INPUT, LOW);
-    pin3.config(INPUT, LOW);
-    pin14.config(INPUT, LOW);
-    pin17.config(INPUT, LOW);
+    pin2.mode(INPUT);
+    pin3.mode(INPUT);
+    pin14.mode(INPUT);
+    pin17.mode(INPUT);
   }
   
   if (menuptr==6) //21010
@@ -286,7 +286,7 @@ void setup() {
     pin14.high();
     pin15.high();
     pin16.high();    
-    pin17.config(INPUT, LOW);
+    pin17.mode(INPUT);
   }
 
   if (menuptr==5) //44256
@@ -305,10 +305,10 @@ void setup() {
     pin13.high();
     pin14.high();
     pin15.high();
-    pin16.config(INPUT, LOW);
-    pin17.config(INPUT, LOW);
-    pin18.config(INPUT, LOW);
-    pin19.config(INPUT, LOW);
+    pin16.mode(INPUT);
+    pin17.mode(INPUT);
+    pin18.mode(INPUT);
+    pin19.mode(INPUT);
     
   }
   powerOn();
@@ -482,10 +482,10 @@ void write_word4(byte data, int row, int col)
   pin5.high();
   pin15.high();
 
-  pin2.config(INPUT, LOW);
-  pin3.config(INPUT, LOW);
-  pin14.config(INPUT, LOW);
-  pin17.config(INPUT, LOW);
+  pin2.mode(INPUT);
+  pin3.mode(INPUT);
+  pin14.mode(INPUT);
+  pin17.mode(INPUT);
 }
 
 //for 4416, 4464
@@ -512,10 +512,10 @@ byte read_word4(int row, int col)
   pin15.low();
 
   //inputs
-  pin2.config(INPUT, LOW);
-  pin3.config(INPUT, LOW);
-  pin14.config(INPUT, LOW);
-  pin17.config(INPUT, LOW);
+  pin2.mode(INPUT);
+  pin3.mode(INPUT);
+  pin14.mode(INPUT);
+  pin17.mode(INPUT);
 
   // /g low
   pin16.low();
@@ -556,10 +556,10 @@ void write_word5(byte data, int row, int col)
   pin2.high();
   pin15.high();
 
-  pin19.config(INPUT, LOW);
-  pin16.config(INPUT, LOW);
-  pin17.config(INPUT, LOW);
-  pin18.config(INPUT, LOW);
+  pin19.mode(INPUT);
+  pin16.mode(INPUT);
+  pin17.mode(INPUT);
+  pin18.mode(INPUT);
 }
 
 //for 44256
@@ -574,10 +574,10 @@ byte read_word5(int row, int col)
   pin15.low();
 
   //inputs
-  pin19.config(INPUT, LOW);
-  pin16.config(INPUT, LOW);
-  pin17.config(INPUT, LOW);
-  pin18.config(INPUT, LOW);
+  pin19.mode(INPUT);
+  pin16.mode(INPUT);
+  pin17.mode(INPUT);
+  pin18.mode(INPUT);
 
   // /g low
   pin14.low();
