@@ -1,4 +1,4 @@
-#include <FastGPIO.h>
+#include <DigitalIO.h>
 //IC Tester
 //MCbx 2017
 //GNU GPL
@@ -24,6 +24,26 @@ byte (*read_word)(int, int);   //FILL THESE IN CHIP DEF!
 void (*write_word)(byte, int, int);
 void (*initialize_memory)();
 void (*putAddress)(int);
+
+DigitalPin<2> pin2;
+DigitalPin<3> pin3;
+DigitalPin<4> pin4;
+DigitalPin<5> pin5;
+DigitalPin<6> pin6;
+DigitalPin<7> pin7;
+DigitalPin<8> pin8;
+DigitalPin<9> pin9;
+DigitalPin<10> pin10;
+DigitalPin<11> pin11;
+DigitalPin<12> pin12;
+DigitalPin<13> pin13;
+DigitalPin<14> pin14;
+DigitalPin<15> pin15;
+DigitalPin<16> pin16;
+DigitalPin<17> pin17;
+DigitalPin<18> pin18;
+DigitalPin<19> pin19;
+    
 
 inline void powerOn()
 {
@@ -213,82 +233,82 @@ void setup() {
   //SET PIN MODES
   if (menuptr<3) //4116, 6164, 61256
   {
-    FastGPIO::Pin<6>::setOutput(HIGH);
-    FastGPIO::Pin<8>::setOutput(HIGH);
-    FastGPIO::Pin<7>::setOutput(HIGH);
-    FastGPIO::Pin<12>::setOutput(HIGH);
-    FastGPIO::Pin<11>::setOutput(HIGH);
-    FastGPIO::Pin<10>::setOutput(HIGH);
-    FastGPIO::Pin<13>::setOutput(HIGH);
-    FastGPIO::Pin<9>::setOutput(HIGH);
-    FastGPIO::Pin<2>::setOutput(HIGH);
-    FastGPIO::Pin<3>::setOutput(HIGH);
-    FastGPIO::Pin<5>::setOutput(HIGH);
-    FastGPIO::Pin<15>::setOutput(HIGH);
-    FastGPIO::Pin<4>::setOutput(HIGH);
-    FastGPIO::Pin<14>::setInput();
+    pin6.high();
+    pin8.high();
+    pin7.high();
+    pin12.high();
+    pin11.high();
+    pin10.high();
+    pin13.high();
+    pin9.high();
+    pin2.high();
+    pin3.high();
+    pin5.high();
+    pin15.high();
+    pin4.high();
+    pin14.config(INPUT, LOW);
   }
 
   if ((menuptr==3)||(menuptr==4)) //4416, 4464
   {
-    FastGPIO::Pin<6>::setOutput(HIGH);
-    FastGPIO::Pin<8>::setOutput(HIGH);
-    FastGPIO::Pin<7>::setOutput(HIGH);
-    FastGPIO::Pin<12>::setOutput(HIGH);
-    FastGPIO::Pin<11>::setOutput(HIGH);
-    FastGPIO::Pin<10>::setOutput(HIGH);
-    FastGPIO::Pin<13>::setOutput(HIGH);
-    FastGPIO::Pin<9>::setOutput(HIGH);
-    FastGPIO::Pin<5>::setOutput(HIGH);
-    FastGPIO::Pin<15>::setOutput(HIGH);
-    FastGPIO::Pin<4>::setOutput(HIGH);
-    FastGPIO::Pin<16>::setOutput(HIGH);
-    FastGPIO::Pin<2>::setInput();
-    FastGPIO::Pin<3>::setInput();
-    FastGPIO::Pin<14>::setInput();
-    FastGPIO::Pin<17>::setInput();
+    pin6.high();
+    pin8.high();
+    pin7.high();
+    pin12.high();
+    pin11.high();
+    pin10.high();
+    pin13.high();
+    pin9.high();
+    pin5.high();
+    pin15.high();
+    pin4.high();
+    pin16.high();
+    pin2.config(INPUT, LOW);
+    pin3.config(INPUT, LOW);
+    pin14.config(INPUT, LOW);
+    pin17.config(INPUT, LOW);
   }
   
   if (menuptr==6) //21010
   {
-    FastGPIO::Pin<2>::setOutput(HIGH);
-    FastGPIO::Pin<3>::setOutput(HIGH);
-    FastGPIO::Pin<4>::setOutput(LOW);
-    FastGPIO::Pin<5>::setOutput(HIGH);
-    FastGPIO::Pin<6>::setOutput(HIGH);
-    FastGPIO::Pin<7>::setOutput(HIGH);
-    FastGPIO::Pin<8>::setOutput(HIGH);
-    FastGPIO::Pin<9>::setOutput(HIGH);
-    FastGPIO::Pin<10>::setOutput(HIGH);
-    FastGPIO::Pin<11>::setOutput(HIGH);
-    FastGPIO::Pin<12>::setOutput(HIGH);
-    FastGPIO::Pin<13>::setOutput(HIGH);
-    FastGPIO::Pin<14>::setOutput(HIGH);
-    FastGPIO::Pin<15>::setOutput(HIGH);
-    FastGPIO::Pin<16>::setOutput(HIGH);    
-    FastGPIO::Pin<17>::setInput();
+    pin2.high();
+    pin3.high();
+    pin4.low();
+    pin5.high();
+    pin6.high();
+    pin7.high();
+    pin8.high();
+    pin9.high();
+    pin10.high();
+    pin11.high();
+    pin12.high();
+    pin13.high();
+    pin14.high();
+    pin15.high();
+    pin16.high();    
+    pin17.config(INPUT, LOW);
   }
 
   if (menuptr==5) //44256
   {
-    FastGPIO::Pin<2>::setOutput(HIGH);
-    FastGPIO::Pin<3>::setOutput(HIGH);
-    FastGPIO::Pin<4>::setOutput(LOW);
-    FastGPIO::Pin<5>::setOutput(HIGH);
-    FastGPIO::Pin<6>::setOutput(HIGH);
-    FastGPIO::Pin<7>::setOutput(HIGH);
-    FastGPIO::Pin<8>::setOutput(HIGH);
-    FastGPIO::Pin<9>::setOutput(HIGH);
-    FastGPIO::Pin<10>::setOutput(HIGH);
-    FastGPIO::Pin<11>::setOutput(HIGH);
-    FastGPIO::Pin<12>::setOutput(HIGH);
-    FastGPIO::Pin<13>::setOutput(HIGH);
-    FastGPIO::Pin<14>::setOutput(HIGH);
-    FastGPIO::Pin<15>::setOutput(HIGH);
-    FastGPIO::Pin<16>::setInput();
-    FastGPIO::Pin<17>::setInput();
-    FastGPIO::Pin<18>::setInput();
-    FastGPIO::Pin<19>::setInput();
+    pin2.high();
+    pin3.high();
+    pin4.low();
+    pin5.high();
+    pin6.high();
+    pin7.high();
+    pin8.high();
+    pin9.high();
+    pin10.high();
+    pin11.high();
+    pin12.high();
+    pin13.high();
+    pin14.high();
+    pin15.high();
+    pin16.config(INPUT, LOW);
+    pin17.config(INPUT, LOW);
+    pin18.config(INPUT, LOW);
+    pin19.config(INPUT, LOW);
     
   }
   powerOn();
@@ -308,58 +328,58 @@ void setup() {
 //for 4116, 4164, 41256
 void putAddress1(int addr) //this doesn't require NoInterrupts as it's called 
 {                       //from inside of noInterrupts function.
-    FastGPIO::Pin<6>::setOutput(bitRead(addr,0));
-    FastGPIO::Pin<8>::setOutput(bitRead(addr,1));
-    FastGPIO::Pin<7>::setOutput(bitRead(addr,2));
-    FastGPIO::Pin<12>::setOutput(bitRead(addr,3));
-    FastGPIO::Pin<11>::setOutput(bitRead(addr,4));
-    FastGPIO::Pin<10>::setOutput(bitRead(addr,5));
-    FastGPIO::Pin<13>::setOutput(bitRead(addr,6));
-    FastGPIO::Pin<9>::setOutput(bitRead(addr,7));
-    FastGPIO::Pin<2>::setOutput(bitRead(addr,8));
+    pin6.write(bitRead(addr,0));
+    pin8.write(bitRead(addr,1));
+    pin7.write(bitRead(addr,2));
+    pin12.write(bitRead(addr,3));
+    pin11.write(bitRead(addr,4));
+    pin10.write(bitRead(addr,5));
+    pin13.write(bitRead(addr,6));
+    pin9.write(bitRead(addr,7));
+    pin2.write(bitRead(addr,8));
 }
 
 //for 4416, 4464
 void putAddress4(int addr) //this doesn't require NoInterrupts as it's called 
 {                       //from inside of noInterrupts function.
-    FastGPIO::Pin<13>::setOutput(bitRead(addr,0));
-    FastGPIO::Pin<12>::setOutput(bitRead(addr,1));
-    FastGPIO::Pin<11>::setOutput(bitRead(addr,2));
-    FastGPIO::Pin<10>::setOutput(bitRead(addr,3));
-    FastGPIO::Pin<8>::setOutput(bitRead(addr,4));
-    FastGPIO::Pin<7>::setOutput(bitRead(addr,5));
-    FastGPIO::Pin<6>::setOutput(bitRead(addr,6));
-    FastGPIO::Pin<9>::setOutput(bitRead(addr,7));
+    pin13.write(bitRead(addr,0));
+    pin12.write(bitRead(addr,1));
+    pin11.write(bitRead(addr,2));
+    pin10.write(bitRead(addr,3));
+    pin8.write(bitRead(addr,4));
+    pin7.write(bitRead(addr,5));
+    pin6.write(bitRead(addr,6));
+    pin9.write(bitRead(addr,7));
 }
 
 //for 44256
 void putAddress5(int addr) //this doesn't require NoInterrupts as it's called 
 {                       //from inside of noInterrupts function.
-    FastGPIO::Pin<5>::setOutput(bitRead(addr,0));
-    FastGPIO::Pin<6>::setOutput(bitRead(addr,1));
-    FastGPIO::Pin<7>::setOutput(bitRead(addr,2));
-    FastGPIO::Pin<8>::setOutput(bitRead(addr,3));
-    FastGPIO::Pin<9>::setOutput(bitRead(addr,4));
-    FastGPIO::Pin<10>::setOutput(bitRead(addr,5));
-    FastGPIO::Pin<11>::setOutput(bitRead(addr,6));
-    FastGPIO::Pin<12>::setOutput(bitRead(addr,7));
-    FastGPIO::Pin<13>::setOutput(bitRead(addr,8));
+    pin5.write(bitRead(addr,0));
+    pin6.write(bitRead(addr,1));
+    pin7.write(bitRead(addr,2));
+    pin8.write(bitRead(addr,3));
+    pin9.write(bitRead(addr,4));
+    pin10.write(bitRead(addr,5));
+    pin11.write(bitRead(addr,6));
+    pin12.write(bitRead(addr,7));
+    pin13.write(bitRead(addr,8));
 }
 
 
 //for 21010
 void putAddress2(int addr) //this doesn't require NoInterrupts as it's called 
 {                       //from inside of noInterrupts function.
-    FastGPIO::Pin<5>::setOutput(bitRead(addr,0));
-    FastGPIO::Pin<6>::setOutput(bitRead(addr,1));
-    FastGPIO::Pin<7>::setOutput(bitRead(addr,2));
-    FastGPIO::Pin<8>::setOutput(bitRead(addr,3));
-    FastGPIO::Pin<9>::setOutput(bitRead(addr,4));
-    FastGPIO::Pin<10>::setOutput(bitRead(addr,5));
-    FastGPIO::Pin<11>::setOutput(bitRead(addr,6));
-    FastGPIO::Pin<12>::setOutput(bitRead(addr,7));
-    FastGPIO::Pin<13>::setOutput(bitRead(addr,8));
-    FastGPIO::Pin<14>::setOutput(bitRead(addr,9));
+    pin5.write(bitRead(addr,0));
+    pin6.write(bitRead(addr,1));
+    pin7.write(bitRead(addr,2));
+    pin8.write(bitRead(addr,3));
+    pin9.write(bitRead(addr,4));
+    pin10.write(bitRead(addr,5));
+    pin11.write(bitRead(addr,6));
+    pin12.write(bitRead(addr,7));
+    pin13.write(bitRead(addr,8));
+    pin14.write(bitRead(addr,9));
 }
 
 //Refreshing. this has to be fired regurarly 
@@ -370,35 +390,35 @@ ISR(TIMER1_COMPA_vect)        // interrupt service routine
       for (int i=0;i<rows;i++)
       {
         (*putAddress)(i);
-        FastGPIO::Pin<3>::setOutput(LOW);
-        FastGPIO::Pin<3>::setOutput(HIGH); 
+        pin3.low();
+        pin3.high(); 
       }
       return;
     }
     for (int i=0;i<rows;i++)
     {
       (*putAddress)(i);
-      FastGPIO::Pin<5>::setOutput(LOW);
-      FastGPIO::Pin<5>::setOutput(HIGH); 
+      pin5.low();
+      pin5.high(); 
     }
 } 
 
 //write bit to memory, 4116, 4164, 41256
 void write_word1(byte data, int row, int col)
 {
-  FastGPIO::Pin<3>::setOutput(bitRead(data,0)); //data
+  pin3.write(bitRead(data,0)); //data
   //row addr
   putAddress1(row);
-  FastGPIO::Pin<5>::setOutput(LOW);
+  pin5.low();
   //we
-  FastGPIO::Pin<4>::setOutput(LOW);
+  pin4.low();
   //col addr
   putAddress1(col);
-  FastGPIO::Pin<15>::setOutput(LOW);
+  pin15.low();
 
-  FastGPIO::Pin<5>::setOutput(HIGH);
-  FastGPIO::Pin<4>::setOutput(HIGH);
-  FastGPIO::Pin<15>::setOutput(HIGH);
+  pin5.high();
+  pin4.high();
+  pin15.high();
 }
 
 //read bit from memory, 4116, 4164, 41256
@@ -407,14 +427,14 @@ byte read_word1(int row, int col)
   byte a=0;
   //row addr
   putAddress1(row);
-   FastGPIO::Pin<5>::setOutput(LOW);
+   pin5.low();
   //col addr
   putAddress1(col);
-  FastGPIO::Pin<15>::setOutput(LOW);
-  bitWrite(a,0,FastGPIO::Pin<14>::isInputHigh());
+  pin15.low();
+  bitWrite(a,0,pin14.read());
   
-  FastGPIO::Pin<5>::setOutput(HIGH); 
-  FastGPIO::Pin<15>::setOutput(HIGH);
+  pin5.high(); 
+  pin15.high();
   return a;
 }
 
@@ -424,8 +444,8 @@ void initialize_memory1() //shoot 8 RAS cycles before using.
   noInterrupts();
   for (byte i=0;i<8;i++)
   {
-    FastGPIO::Pin<5>::setOutput(LOW); 
-    FastGPIO::Pin<5>::setOutput(HIGH); 
+    pin5.low(); 
+    pin5.high(); 
   }
   interrupts();
 }
@@ -433,15 +453,15 @@ void initialize_memory1() //shoot 8 RAS cycles before using.
 //for 4416, 4464
 void write_word4(byte data, int row, int col)
 {
-  FastGPIO::Pin<2>::setOutput(bitRead(data,0)); //data
-  FastGPIO::Pin<3>::setOutput(bitRead(data,1)); //data
-  FastGPIO::Pin<14>::setOutput(bitRead(data,2)); //data
-  FastGPIO::Pin<17>::setOutput(bitRead(data,3)); //data
+  pin2.write(bitRead(data,0)); //data
+  pin3.write(bitRead(data,1)); //data
+  pin14.write(bitRead(data,2)); //data
+  pin17.write(bitRead(data,3)); //data
   //row addr
   putAddress4(row);
-  FastGPIO::Pin<5>::setOutput(LOW);
+  pin5.low();
   //we
-  FastGPIO::Pin<4>::setOutput(LOW);
+  pin4.low();
   //col addr
   if (menuptr==4)
   {
@@ -449,23 +469,23 @@ void write_word4(byte data, int row, int col)
   }
   else //4416 is strange.
   {
-    FastGPIO::Pin<12>::setOutput(bitRead(col,0));
-    FastGPIO::Pin<11>::setOutput(bitRead(col,1));
-    FastGPIO::Pin<10>::setOutput(bitRead(col,2));
-    FastGPIO::Pin<8>::setOutput(bitRead(col,3));
-    FastGPIO::Pin<7>::setOutput(bitRead(col,4));
-    FastGPIO::Pin<6>::setOutput(bitRead(col,5));
+    pin12.write(bitRead(col,0));
+    pin11.write(bitRead(col,1));
+    pin10.write(bitRead(col,2));
+    pin8.write(bitRead(col,3));
+    pin7.write(bitRead(col,4));
+    pin6.write(bitRead(col,5));
   }
     
-  FastGPIO::Pin<15>::setOutput(LOW);
-  FastGPIO::Pin<4>::setOutput(HIGH);
-  FastGPIO::Pin<5>::setOutput(HIGH);
-  FastGPIO::Pin<15>::setOutput(HIGH);
+  pin15.low();
+  pin4.high();
+  pin5.high();
+  pin15.high();
 
-  FastGPIO::Pin<2>::setInput();
-  FastGPIO::Pin<3>::setInput();
-  FastGPIO::Pin<14>::setInput();
-  FastGPIO::Pin<17>::setInput();
+  pin2.config(INPUT, LOW);
+  pin3.config(INPUT, LOW);
+  pin14.config(INPUT, LOW);
+  pin17.config(INPUT, LOW);
 }
 
 //for 4416, 4464
@@ -474,7 +494,7 @@ byte read_word4(int row, int col)
   byte a=0;
   //row addr
   putAddress4(row);
-  FastGPIO::Pin<5>::setOutput(LOW);
+  pin5.low();
   //col addr
     if (menuptr==4)
   {
@@ -482,34 +502,34 @@ byte read_word4(int row, int col)
   }
   else //4416 is strange. Columns have to be entered different way.
   {
-    FastGPIO::Pin<12>::setOutput(bitRead(col,0));
-    FastGPIO::Pin<11>::setOutput(bitRead(col,1));
-    FastGPIO::Pin<10>::setOutput(bitRead(col,2));
-    FastGPIO::Pin<8>::setOutput(bitRead(col,3));
-    FastGPIO::Pin<7>::setOutput(bitRead(col,4));
-    FastGPIO::Pin<6>::setOutput(bitRead(col,5));
+    pin12.write(bitRead(col,0));
+    pin11.write(bitRead(col,1));
+    pin10.write(bitRead(col,2));
+    pin8.write(bitRead(col,3));
+    pin7.write(bitRead(col,4));
+    pin6.write(bitRead(col,5));
   }
-  FastGPIO::Pin<15>::setOutput(LOW);
+  pin15.low();
 
   //inputs
-  FastGPIO::Pin<2>::setInput();
-  FastGPIO::Pin<3>::setInput();
-  FastGPIO::Pin<14>::setInput();
-  FastGPIO::Pin<17>::setInput();
+  pin2.config(INPUT, LOW);
+  pin3.config(INPUT, LOW);
+  pin14.config(INPUT, LOW);
+  pin17.config(INPUT, LOW);
 
   // /g low
-  FastGPIO::Pin<16>::setOutput(LOW);
+  pin16.low();
 
   //read things
-  bitWrite(a,0,FastGPIO::Pin<2>::isInputHigh());
-  bitWrite(a,1,FastGPIO::Pin<3>::isInputHigh());
-  bitWrite(a,2,FastGPIO::Pin<14>::isInputHigh());
-  bitWrite(a,3,FastGPIO::Pin<17>::isInputHigh());
+  bitWrite(a,0,pin2.read());
+  bitWrite(a,1,pin3.read());
+  bitWrite(a,2,pin14.read());
+  bitWrite(a,3,pin17.read());
 
-  FastGPIO::Pin<16>::setOutput(HIGH);
+  pin16.high();
 
-  FastGPIO::Pin<5>::setOutput(HIGH); 
-  FastGPIO::Pin<15>::setOutput(HIGH);
+  pin5.high(); 
+  pin15.high();
 
   return a;
 }
@@ -519,27 +539,27 @@ byte read_word4(int row, int col)
 //for 44256
 void write_word5(byte data, int row, int col)
 {
-  FastGPIO::Pin<19>::setOutput(bitRead(data,0)); //data
-  FastGPIO::Pin<16>::setOutput(bitRead(data,1)); //data
-  FastGPIO::Pin<17>::setOutput(bitRead(data,2)); //data
-  FastGPIO::Pin<18>::setOutput(bitRead(data,3)); //data
+  pin19.write(bitRead(data,0)); //data
+  pin16.write(bitRead(data,1)); //data
+  pin17.write(bitRead(data,2)); //data
+  pin18.write(bitRead(data,3)); //data
   //row addr
   putAddress5(row);
-  FastGPIO::Pin<3>::setOutput(LOW);
+  pin3.low();
   //we
-  FastGPIO::Pin<2>::setOutput(LOW);
+  pin2.low();
   //col addr
   putAddress5(col);
-  FastGPIO::Pin<15>::setOutput(LOW);
+  pin15.low();
   
-  FastGPIO::Pin<3>::setOutput(HIGH);
-  FastGPIO::Pin<2>::setOutput(HIGH);
-  FastGPIO::Pin<15>::setOutput(HIGH);
+  pin3.high();
+  pin2.high();
+  pin15.high();
 
-  FastGPIO::Pin<19>::setInput();
-  FastGPIO::Pin<16>::setInput();
-  FastGPIO::Pin<17>::setInput();
-  FastGPIO::Pin<18>::setInput();
+  pin19.config(INPUT, LOW);
+  pin16.config(INPUT, LOW);
+  pin17.config(INPUT, LOW);
+  pin18.config(INPUT, LOW);
 }
 
 //for 44256
@@ -548,30 +568,30 @@ byte read_word5(int row, int col)
   byte a=0;
   //row addr
   putAddress5(row);
-  FastGPIO::Pin<3>::setOutput(LOW);
+  pin3.low();
   //col addr
   putAddress5(col);
-  FastGPIO::Pin<15>::setOutput(LOW);
+  pin15.low();
 
   //inputs
-  FastGPIO::Pin<19>::setInput();
-  FastGPIO::Pin<16>::setInput();
-  FastGPIO::Pin<17>::setInput();
-  FastGPIO::Pin<18>::setInput();
+  pin19.config(INPUT, LOW);
+  pin16.config(INPUT, LOW);
+  pin17.config(INPUT, LOW);
+  pin18.config(INPUT, LOW);
 
   // /g low
-  FastGPIO::Pin<14>::setOutput(LOW);
+  pin14.low();
 
   //read things
-  bitWrite(a,0,FastGPIO::Pin<19>::isInputHigh());
-  bitWrite(a,1,FastGPIO::Pin<16>::isInputHigh());
-  bitWrite(a,2,FastGPIO::Pin<17>::isInputHigh());
-  bitWrite(a,3,FastGPIO::Pin<18>::isInputHigh());
+  bitWrite(a,0,pin19.read());
+  bitWrite(a,1,pin16.read());
+  bitWrite(a,2,pin17.read());
+  bitWrite(a,3,pin18.read());
 
-  FastGPIO::Pin<14>::setOutput(HIGH);
+  pin14.high();
 
-  FastGPIO::Pin<3>::setOutput(HIGH); 
-  FastGPIO::Pin<15>::setOutput(HIGH);
+  pin3.high(); 
+  pin15.high();
 
   return a;
 }
@@ -581,19 +601,19 @@ byte read_word5(int row, int col)
 //write bit to memory, 21010
 void write_word2(byte data, int row, int col)
 {
-  FastGPIO::Pin<16>::setOutput(bitRead(data,0)); //data
+  pin16.write(bitRead(data,0)); //data
   //row addr
   putAddress2(row);
-  FastGPIO::Pin<3>::setOutput(LOW);
+  pin3.low();
   //we
-  FastGPIO::Pin<2>::setOutput(LOW);
+  pin2.low();
   //col addr
   putAddress2(col);
-  FastGPIO::Pin<15>::setOutput(LOW);
+  pin15.low();
 
-  FastGPIO::Pin<2>::setOutput(HIGH);
-  FastGPIO::Pin<15>::setOutput(HIGH);
-  FastGPIO::Pin<3>::setOutput(HIGH);
+  pin2.high();
+  pin15.high();
+  pin3.high();
 }
 
 //read bit from memory, 21010
@@ -602,14 +622,14 @@ byte read_word2(int row, int col)
   byte a=0;
   //row addr
   putAddress2(row);
-   FastGPIO::Pin<3>::setOutput(LOW);
+   pin3.low();
   //col addr
   putAddress2(col);
-  FastGPIO::Pin<15>::setOutput(LOW);
-  bitWrite(a,0,FastGPIO::Pin<17>::isInputHigh());
+  pin15.low();
+  bitWrite(a,0,pin17.read());
   
-  FastGPIO::Pin<3>::setOutput(HIGH); 
-  FastGPIO::Pin<15>::setOutput(HIGH);
+  pin3.high(); 
+  pin15.high();
 
   return a;
 }
@@ -620,8 +640,8 @@ void initialize_memory2() //shoot 8 RAS cycles before using.
   noInterrupts();
   for (byte i=0;i<8;i++)
   {
-    FastGPIO::Pin<3>::setOutput(LOW); 
-    FastGPIO::Pin<3>::setOutput(HIGH); 
+    pin3.low(); 
+    pin3.high(); 
   }
   interrupts();
 }
