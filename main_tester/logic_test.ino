@@ -179,7 +179,7 @@ void run_script()
   for (byte i=0;i<100;i++) //repeat test 100 times
   {
     stepNo=0;
-    for (long q=1;q<pgm_read_dword(&ptr[0]);q++)
+    for (unsigned long q=1;q<pgm_read_dword(&ptr[0]);q++)
     {
       stepNo++;
       parse_cmd(pgm_read_dword(&ptr[q]));
